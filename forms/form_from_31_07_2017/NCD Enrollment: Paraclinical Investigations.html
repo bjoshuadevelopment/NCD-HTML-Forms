@@ -1,0 +1,289 @@
+<htmlform> <!--
+           Oncology - Inpatient progress note -Breast DST
+            Pilot_4July_v1.3NT
+                Author:
+                Builder: Byiringiro Joshua
+                started on July 27, 2017
+        -->
+
+    <macros>
+        @GLYCEMIA@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
+        @HbA1c@ = 159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @UREA@ = 3cd4aa12-26fe-102b-80cb-0017a47871b2
+        @CREATININE@ = 3cd4374e-26fe-102b-80cb-0017a47871b2
+        @TOTAL_CHOLESTEROL@ = 3cd68c7e-26fe-102b-80cb-0017a47871b2
+        @LDL@ = 3cd68fa8-26fe-102b-80cb-0017a47871b2
+        @HDL@ = 3cd68e18-26fe-102b-80cb-0017a47871b2
+        @TRIGLYCERIDES@ = 3cd69138-26fe-102b-80cb-0017a47871b2
+        @ASAT_RESULT@ = 68ba31fa-e2ae-45c1-8d6d-f116c27f190e
+        @ALAT_RESULT@ = fd826b26-0343-41d6-b51c-81f3b75e388c
+        @Gamma_GT@ = a01f58fa-0e27-474a-8975-f282f888a31d
+        @NA@ = 3cd76b58-26fe-102b-80cb-0017a47871b2
+        @K@ = 3cd76ce8-26fe-102b-80cb-0017a47871b2
+        @cal@ = 01765cd1-8fd6-4783-b053-190b1f6ed5bd
+        @TOTAL_PROTEIN@ = 3cd3bd5a-26fe-102b-80cb-0017a47871b2
+        @GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
+        @ketone@ = e8ebea1d-88c7-4e1d-aa9a-bccbe51dbb9b
+        @OTHER_LAB_TEST_NAME@ = 3ce1c90e-26fe-102b-80cb-0017a47871b2
+        @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
+        @Xrays@ = 3723fd15-2e30-477d-9488-5cfd78bd790c
+        @fundoscopy@ = da4e608a-452f-4dfa-9540-6fd53c6adf33
+        @ECG_DIAGNOSIS_(text)@ = cdcbfe8b-5b1b-4522-91fb-24267c668ba0
+
+
+    </macros>
+
+
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <div id="container" style="width:100%">
+        <section>
+
+            <table cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                             height="65" ></img>
+                        <b>REPUBLIC OF RWANDA
+                            <br />MINISTRY OF HEALTH</b>
+                    </td>
+                    <td><strong> NCD Enrollment: DIAGNOSTIC ET LISTE DES PROBLEMES/</strong>Diagnosis and Problem List <br/>
+                        <b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                        <br/>
+                        Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+                    </td>
+                    <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Provider:<encounterProvider id="encounterProvider"
+                                                    role="Provider" default="currentUser"/>
+                    </td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th class="tableHeader" colspan="4">
+                        <center>
+                            <strong> EXAMENS COMPLEMENTAIRES/</strong> PARACLINICAL INVESTIGATIONS
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>Results</td>
+                    <td>Test</td>
+                    <td>Results</td>
+                </tr>
+                <tr>
+                    <td>1.FBC</td>
+                    <td><strong>Waiting for the order!</strong></td>
+                    <td>6.ASAT/ALAT/GamaGT</td>
+                    <td>
+                        <obs conceptId="$@ASAT_RESULT@"/>
+                        <obs conceptId="$@ALAT_RESULT@"/>
+                        <obs conceptId="$@Gamma_GT@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Glycemie</td>
+                    <td><obs conceptId="$@GLYCEMIA@" col="100%"/></td>
+                    <td>7.Electrolytes(Na<sup>+</sup>,K<sup>+</sup>,C<sup>-</sup></td>
+                    <td>
+                        <obs conceptId="$@NA@"/>
+                        <obs conceptId="$@K@"/>
+                        <obs conceptId="$@cal@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.HbA1C</td>
+                    <td><obs conceptId="$@HbA1c@"/></td>
+                    <td>8.Bandelette urinaire(protein,glucose,cetone)</td>
+                    <td>
+                        <obs conceptId="$@TOTAL_PROTEIN@"/>
+                        <obs conceptId="$@GLUCOSE@"/>
+                        <obs conceptId="$@ketone@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.uree and creatinine</td>
+                    <td>
+                        <obs conceptId="$@UREA@"/>
+                        <obs conceptId="$@CREATININE@"/>
+                    </td>
+                    <td>9.HIV</td>
+                    <td>Coded or text?</td>
+                </tr>
+                <tr>
+                    <td>5.Lipid profile <br/>
+                        (Total cholesterol,LDL,HDL,Triglycerides)</td>
+                    <td>
+                        <obs conceptId="$@TOTAL_CHOLESTEROL@"/>
+                        <obs conceptId="$@LDL@"/>
+                        <obs conceptId="$@HDL@"/>
+                        <obs conceptId="$@TRIGLYCERIDES@"/>
+                    </td>
+                    <td>10.Other test <obs conceptId="$@OTHER_LAB_TEST_NAME@"/></td>
+                    <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@"/></td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th class="tableHeader" colspan="4">
+                        <center>
+                            <strong> Other Investigations (xray,etc</strong>
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Xrays
+                    </td>
+                    <td>
+                        <obs conceptId="$@Xrays@" cols="80"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Fundoscopy
+                    </td>
+                    <td>
+                        <obs conceptId="$@fundoscopy@" cols="80"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ECG
+                    </td>
+                    <td>
+                        <obs conceptId="$@ECG_DIAGNOSIS_(text)@" cols="80"/>
+                    </td>
+                </tr>
+
+            </table>
+        </section>
+        <br />
+        <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
+                        stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
+        -->
+        <submit />
+        <br/>
+    </div>
+</htmlform>
