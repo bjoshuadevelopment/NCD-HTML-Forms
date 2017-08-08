@@ -239,7 +239,50 @@
         @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
         @ECHOCARDIOGRAM_COMMENT@ = 5c052224-aeaf-4a17-8dca-8255eef79644
         @Summary@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
-
+        @CHRONIC_CARE_DIAGNOSIS@ = bb7e04d8-3355-4fe8-9c87-98642eafab93
+        @HEART_FAILURE@ = 0670f6b9-5456-4bd3-86b1-846abc4fe2ba
+        @HEART_FAILURE_DIAGNOSIS@ = e6bb1491-43b5-46b8-ba55-bd1ad188123c
+        @CARDIOMYOPATHY@ =3ce8c3d0-26fe-102b-80cb-0017a47871b2
+        @RHEUMATIC_HEART_DISEASE@ = 3cceab1c-26fe-102b-80cb-0017a47871b2
+        @MITRAL_STENOSIS@ = d29a5578-15cd-419c-9d30-473e922c027d
+        @HYPERTENSIVE_HEART_DISEASE@ = fe7787ea-59ba-4427-b3df-62e9dc74d4a3
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other_Rheumatic_heart_disease_diagnosis@ = df3532da-64ed-4357-8319-fd1354b86fe8
+        @NYHA_CLASS@ = e90416ff-65d8-4ab3-9fc6-8e16ae5f2caf
+        @NYHA_CLASS_I@ = ef44dc83-7d6d-4e80-91c0-d9b447a689ff
+        @NYHA_CLASS_II@ = 04f9ce65-5f58-4ebb-86e5-7f9c48bea1fb
+        @NYHA_CLASS_III@ = a2cb697a-a105-4d62-8f4a-7e2bcc942bb2
+        @NYHA_CLASS_IV@ = 33f45cc0-fe1c-4731-8877-1e6b44dca288
+        @DIABETES@ = edf4ecc4-44f6-457a-b561-179f4426b16a
+        @Type_of_diabetes_diagnosis@ = d66e5df3-bc91-41ea-9592-0f199fbc589e
+        @Type_1_diabetes@ = 105903f4-7b6d-496a-b613-37ab9d0f5450
+        @Type_2_diabetes@ = 8b26ecd3-8726-4c8e-b042-cbe71e44a863
+        @Gestational_diabetes@ = 932d395c-d509-4d42-bac4-5a3281efe149
+        @Patient_has_Hypertension@ = 52ad2ff3-3cd2-4383-be98-e067582ba674
+        @Hypertension_Stages@ = 5d31abca-d671-4e93-aaa0-5b383ff7d8ad
+        @Stage_1_Hypertension@ = b49bce96-d02b-4368-9abd-f3bba4dbf87d
+        @Stage_2_Hypertension@ = 8857d3aa-996c-4a80-b900-62cf04d4d17d
+        @stage_3_hypertension@ = 485bdf2a-552a-4654-9e5e-048429049801
+        @Emergency_HTN@ = 6eaf3d30-d18c-4cfb-90cb-654d0d346a39
+        @Chronic_Respiratory_diseases@ = 01370002-d714-4fb8-86cf-00e5652e30ea
+        @Clinical_diagnosis_for_asthma@ = e8f25c6e-9491-4ca3-9d31-7df9cb3d9ed9
+        @CONFIRMED_DIAGNOSIS@ = 3d762b82-f951-4d13-b147-6aaba63b25d1
+        @Probable_diagnosis@ = dfb8ba28-2255-4437-b649-fa0bf7bd2fa9
+        @Other_non-coded_pulmonary_disease@ = 0b8560c7-6eb9-4c92-a3b0-351f40fc12c0
+        @Other_pulmonar_disease_non-coded@ = fcd7265c-9811-4831-8dfa-73adb6ec3f63
+        @OI_OR_COMORBIDITY@ = 0ae23a5a-15f5-102d-96e4-000c29c2a5d7
+        @GASTROESOPHAGEAL_REFLUX@ = e99123ff-7906-4bf6-906e-cd0b1d555e27
+        @RHINITIS@ = 3cd4cf38-26fe-102b-80cb-0017a47871b2
+        @RENAL_FAILURE@ = 894f306e-a868-44b8-b580-93495e3cca4c
+        @Renal_Failure_Stages@ = 72d9b6c4-2368-49e2-81c9-8e8036d2232b
+        @Renal_Failure_Stage_1_and_2@ = bfc55cc1-2706-4132-ac19-1fbe8a821ab7
+        @Renal_Failure_Stage_3@ = 3364b7df-0245-42b3-8fda-77d361680cdd
+        @Renal_Failure_Stage_4and5@ = 9d0342ab-a9e0-49a9-b799-78c331549b3f
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other_clinical_diagnosis_non-coded@ = 135d1163-d50a-411c-9ea1-530ca2033e10
+        @RESULT_OF_HIV_TEST@ = 3ce17cec-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@ = 3cd28732-26fe-102b-80cb-0017a47871b2
+        @POSITIVE@ = 3cd3a7a2-26fe-102b-80cb-0017a47871b2
 
 
     </macros>
@@ -414,20 +457,22 @@
                         <br/>
                         <strong> Family care-giver: </strong>
                         <obs conceptId="$@Famil_Care_giver@"/>
-                        <strong>Tel</strong>
+                        <br/>
+                        <strong>Tel: </strong> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         <obs conceptId="$@Family_Care_giver_Phone_Number@"/>
                         <br/>
                         <br/>
                         <strong> Home based care practionner (HBCP) </strong>
                         <br/>
                         <strong>Noms</strong>/Names: <obs conceptId="$@Home_Based_Care_Practionner@"/>
-                        <strong>Tel: </strong> <obs conceptId="$@Home_Base_Care_Practionner_Phone_Number@"/>
+                        <br/>
+                        <strong>Tel: &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </strong> <obs conceptId="$@Home_Base_Care_Practionner_Phone_Number@"/>
 
                     </td>
                     <td >
                         <addressHierarchyRwanda />
 
-                        <strong>Telephone:</strong> <obs conceptId="$@TELEPHONE_NUMBER@" />
+                        <strong>Telephone:</strong> &#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@TELEPHONE_NUMBER@" />
                         <obs conceptId="$@Patient's_Contact_Phone_Owner@" answerConceptIds="$@Patient(generic__answer_to_aquestion)@,$@OTHER_NO_CODED@" answerLabels="patient,autre/other"
                              style="radio"/>
                         <obs conceptId="$@Other@"/>
@@ -1047,6 +1092,75 @@
                 <tr>
                     <th class="tableHeader" colspan="4">
                         <center>
+                            <strong> EXAMENS COMPLEMENTAIRES/</strong> PARACLINICAL INVESTIGATIONS
+                        </center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>Results</td>
+                    <td>Test</td>
+                    <td>Results</td>
+                </tr>
+                <tr>
+                    <td>1.FBC</td>
+                    <td><strong>Waiting for the order!</strong></td>
+                    <td>6.ASAT/ALAT/GamaGT</td>
+                    <td>
+                        <obs conceptId="$@ASAT_RESULT@"/>
+                        <obs conceptId="$@ALAT_RESULT@"/>
+                        <obs conceptId="$@Gamma_GT@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Glycemie</td>
+                    <td><obs conceptId="$@GLYCEMIA@" col="100%"/></td>
+                    <td>7.Electrolytes(Na<sup>+</sup>,K<sup>+</sup>,C<sup>-</sup></td>
+                    <td>
+                        <obs conceptId="$@NA@"/>
+                        <obs conceptId="$@K@"/>
+                        <obs conceptId="$@cal@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.HbA1C</td>
+                    <td><obs conceptId="$@HbA1c@"/></td>
+                    <td>8.Bandelette urinaire(protein,glucose,cetone)</td>
+                    <td>
+                        <obs conceptId="$@TOTAL_PROTEIN@"/>
+                        <obs conceptId="$@GLUCOSE@"/>
+                        <obs conceptId="$@ketone@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.uree and creatinine</td>
+                    <td>
+                        <obs conceptId="$@UREA@"/>
+                        <obs conceptId="$@CREATININE@"/>
+                    </td>
+                    <td>9.HIV</td>
+                    <td>
+                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@NEGATIVE@" answerLabel="-ve" />
+                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@POSITIVE@" answerLabel="+ve" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.Lipid profile <br/>
+                        (Total cholesterol,LDL,HDL,Triglycerides)</td>
+                    <td>
+                        <obs conceptId="$@TOTAL_CHOLESTEROL@"/>
+                        <obs conceptId="$@LDL@"/>
+                        <obs conceptId="$@HDL@"/>
+                        <obs conceptId="$@TRIGLYCERIDES@"/>
+                    </td>
+                    <td>10.Other test <obs conceptId="$@OTHER_LAB_TEST_NAME@"/></td>
+                    <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@"/></td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th class="tableHeader" colspan="4">
+                        <center>
                             <strong> Other Investigations (xray,etc</strong>
                         </center>
                     </th>
@@ -1126,6 +1240,157 @@
                 <tr>
                     <td><strong>RESUME/</strong> <br/> SUMMARY</td>
                     <td><obs conceptId="$@Summary@" cols="130"/></td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <th class="tableHeader" colspan="2">
+                        DIAGNOSTIQUE/DIAGNOSIS
+                    </th>
+                </tr>
+                <tr>
+                    <td>EMR</td>
+                    <td>
+                        <ul>
+                            <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@HEART_FAILURE@"
+                                 answerLabel="" style="checkbox" /> <u> <strong>L'Insuffience Cardiaque/</strong> Heart Failure</u>
+                            <br />
+
+                            <ul>
+                                <b>Type de l'insuffience cardiaque:</b>
+                                <br/>
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@CARDIOMYOPATHY@" answerLabel=""
+                                     style="checkbox" /> <strong>Cardiomyopathie/</strong> Cardiomyopathy
+                                <br />
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@RHEUMATIC_HEART_DISEASE@"
+                                     answerLabel="" style="checkbox" />
+                                <strong>Maladie rheumatismale des valves/</strong> Rheumatic heart disease
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@MITRAL_STENOSIS@" answerLabel=""
+                                     style="checkbox" /> <strong>Sténose mitrale/</strong> Mitral stenosis
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@Other_Rheumatic_heart_disease_diagnosis@" answerLabel=""
+                                     style="checkbox" /> <strong>Autre/</strong> Other
+                                <br />
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@HYPERTENSIVE_HEART_DISEASE@"
+                                     answerLabel="" style="checkbox" /><strong>Maladie hypertensive du coeur/</strong> Hypertensive heart disease
+                                <br />
+                                <obs conceptId="$@HEART_FAILURE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@"
+                                     answerLabel="" style="checkbox" /> <strong>Autre type de l'insufficence cardiaque/</strong> Other type of Heart Failure:
+                            </ul>
+                            <b>Sévérité des symptômes/</b>
+                            Severity of symptoms
+                            <ul>
+                                <obs conceptId="$@NYHA_CLASS@" answerConceptId="$@NYHA_CLASS_I@" answerLabel="" style="checkbox" />
+                                <strong>NYHA classe I: (Asymptomatique) Pas de limitations d'activités/</strong> (Asymptomatic) No limitation on activity
+                                <br />
+                                <obs conceptId="$@NYHA_CLASS@" answerConceptId="$@NYHA_CLASS_II@"
+                                     answerLabel=""
+                                     style="checkbox" />
+                                <strong>NYHA classe II: (Moins symptomatique) Limitation légère d'activités.  Symptômes seulement avec effort moderé comme en montant les collines/</strong>
+                                (Mildly symptomatic) Symptoms only with moderate exertion. such as climbing a hill
+                                <br />
+                                <obs conceptId="$@NYHA_CLASS@" answerConceptId="$@NYHA_CLASS_III@"
+                                     answerLabel=""
+                                     style="checkbox" />
+                                <strong>NYHA classe III: (Moderement symptomatique) Limitation marquée d'activités.  Symptômes avec effort légère mais confortable au repos/</strong>
+                                (Moderately symptomatic) Symptoms with even light activity but comfortable at rest
+                                <br />
+                                <obs conceptId="$@NYHA_CLASS@" answerConceptId="$@NYHA_CLASS_IV@"
+                                     answerLabel=""
+                                     style="checkbox" />
+                                <strong>NYHA classe IV: (Severement symptomatique) Symptômes avec toute activité, peut être symptomatique au repos/</strong>
+                                (Severely symptomatic) symptoms with all activities. may be symptomatic at rest
+                            </ul>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <b>  <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@DIABETES@" answerLabel="" style="checkbox" /> <u>Diabetes</u> </b>
+                        <obs conceptId="$@Type_of_diabetes_diagnosis@" answerConceptId="$@Type_1_diabetes@"
+                             answerLabel="" style="checkbox" /><strong>Type 1/</strong> Type 1
+                        <obs conceptId="$@Type_of_diabetes_diagnosis@" answerConceptId="$@Type_2_diabetes@" answerLabel=""
+                             style="checkbox" /> <strong>Type 2</strong>
+                        <obs conceptId="$@Type_of_diabetes_diagnosis@" answerConceptId="$@Gestational_diabetes@" answerLabel=""
+                             style="checkbox" />
+                        <strong>Diabète gestationnel/</strong> Gestational diabetes
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@HYPERTENSION@" answerLabel="" style="checkbox"/>
+                        <u><strong>Arterial Hypertension</strong></u>
+                        <obs conceptId="$@Hypertension_Stages@" answerConceptId="$@Stage_1_Hypertension@" answerLabel="" style="checkbox"/>
+                        <strong>stage 1</strong>
+                        <obs conceptId="$@Hypertension_Stages@" answerConceptId="$@Stage_2_Hypertension@" answerLabel="" style="checkbox"/>
+                        <strong>stage 2</strong>
+                        <obs conceptId="$@Hypertension_Stages@" answerConceptId="$@stage_3_hypertension@" answerLabel="" style="checkbox"/>
+                        <strong>stage 3</strong>
+                        <obs conceptId="$@Hypertension_Stages@" answerConceptId="$@Emergency_HTN@" answerLabel="" style="checkbox"/>
+                        <strong>Emergency HTN</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th class="tableHeader">
+                        <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@Chronic_Respiratory_diseases@" answerLabel="" style="checkbox"/>
+                        <u><strong>Chronic Respiratory Diseases</strong></u>
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <obs conceptId="$@Clinical_diagnosis_for_asthma@" answerConceptId="$@CONFIRMED_DIAGNOSIS@" answerLabel="" style="checkbox" />
+                        <strong>Asthme avéré/</strong> Confirmed Asthma
+                        <obs conceptId="$@Clinical_diagnosis_for_asthma@" answerConceptId="$@Probable_diagnosis@" answerLabel="" style="checkbox" />
+                        <strong>Asthme probable/</strong> Probable Asthma
+                        <br/>
+                        <obs conceptId="$@Clinical_diagnosis_for_asthma@" answerConceptId="$@COPD@" answerLabel="" style="checkbox" />
+                        <strong>BPCO/</strong> COPD
+                        <br/>
+                        <obs conceptId="$@Clinical_diagnosis_for_asthma@" answerConceptId="$@Other_non-coded_pulmonary_disease@" answerLabel="" style="checkbox" />
+                        <strong>Autre maladie pulmonaire</strong>
+                        <obs conceptId="$@Other_pulmonar_disease_non-coded@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th class="tableHeader">
+                        <strong>Comorbidité</strong>
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <obs conceptId="$@OI_OR_COMORBIDITY@" answerConceptId="$@GASTROESOPHAGEAL_REFLUX@"
+                             answerLabel="Maladie reflux gastroesophageal (MRGO)/Gastroesophageal reflux disease (GERD)"
+                             style="checkbox" />
+                        <br />
+                        <obs conceptId="$@OI_OR_COMORBIDITY@" answerConceptId="$@RHINITIS@"
+                             answerLabel="Rhinite allergique/Allergic rhinitis" style="checkbox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@RENAL_FAILURE@" answerLabel="" style="checkbox" />
+                        <u><strong>L'Insufficence Rénale/</strong> Renal Failure</u>
+                        <obs conceptId="$@Renal_Failure_Stages@" answerConceptId="$@Renal_Failure_Stage_1_and_2@" answerLabel="" style="checkbox" />
+                        <strong>Stage 1 and 2</strong>
+                        <obs conceptId="$@Renal_Failure_Stages@" answerConceptId="$@Renal_Failure_Stage_3@" answerLabel="" style="checkbox" />
+                        <strong>Stage 3</strong>
+                        <obs conceptId="$@Renal_Failure_Stages@" answerConceptId="$@Renal_Failure_Stage_4and5@" answerLabel="" style="checkbox" />
+                        <strong>Stage 4 and 5</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style=""/>
+                         <strong>Autre/</strong> Other
+                        <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
+                    </td>
                 </tr>
             </table>
         </section>
