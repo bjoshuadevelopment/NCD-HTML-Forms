@@ -351,6 +351,13 @@
         @Number_or_days@ = 00f3e3f4-bd03-4cf1-a487-705b0acf0f4c
         @Other_Asthma_drug@ = 16fae208-4dea-4e32-9233-238be6eac56c
 
+        <!-- Program ID -->
+        @Chronic_respiratory_disease_program@ = 6b825913-ab44-4e49-9ea0-c9e5919f94af
+
+        <!-- form -->
+        @NCD_RBC_Asthma_medication_List@ = 6c32a9b2-0552-428f-a1e5-4211a319e2fb
+
+
 
     </macros>
 
@@ -362,7 +369,8 @@
         font-size: 16px;
         text-align: left;
         }
-
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
         ul {
         list-style-type: square;
         font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -567,7 +575,7 @@
                     <tr>
                         <td></td>
                         <td>
-                                <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
@@ -726,7 +734,7 @@
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
                     <td><strong><u>Family history:</u></strong> <br/> (alcohol,phusical inactivity,hx of chronic disease etc)<br/>
-                    Ubudehe class:<obs conceptId="$@Ubudehe@"/>
+                        Ubudehe class:<obs conceptId="$@Ubudehe@"/>
                     </td>
                     <td colspan="4">
                         <obs conceptId="$@Family_member_suffered_from_Chronic_disease@" answerConceptId="$@YES@" answerLabel="any member suffered from: " style="checkbox"/>
@@ -814,9 +822,9 @@
                     </th>
                 </tr>
                 <tr>
-                        <td></td>
-                        <td> <center><strong> Normaux</strong></center> </td>
-                        <td> <center><strong>Anormaux/ </strong> Abnormal</center> </td>
+                    <td></td>
+                    <td> <center><strong> Normaux</strong></center> </td>
+                    <td> <center><strong>Anormaux/ </strong> Abnormal</center> </td>
                 </tr>
                 <tr>
                     <td>
@@ -1131,25 +1139,25 @@
                     </td>
                     <td>
                         <strong> 1) DDP prédit (voir tableau)/</strong>PEF predicted (see table):
-                            <obs conceptId="$@Predicted_PEF@" />
-                           <strong> L/min </strong>
+                        <obs conceptId="$@Predicted_PEF@" />
+                        <strong> L/min </strong>
                         <br/>
                         <strong>2) DDP avant salbutamol/</strong>PEF before salbutamol
-                            <obs conceptId="$@PEF_before_salbutamol@" />
-                           <strong>L/min</strong>
+                        <obs conceptId="$@PEF_before_salbutamol@" />
+                        <strong>L/min</strong>
 
                         <br/>
                         <strong>3) DDP après salbutamol/</strong>PEF after salbutamol
-                            <obs conceptId="$@PEF_after_salbutamol@"  />
-                            <strong> L/min </strong>
+                        <obs conceptId="$@PEF_after_salbutamol@"  />
+                        <strong> L/min </strong>
                         <br/>
                         <strong>4) DDP % changement après salbutamol/</strong>PEF % change after salbutamol
-                            <obs conceptId="$@Percen_PEF_change_post_salbutamol@" />
-                           <strong> %</strong>
+                        <obs conceptId="$@Percen_PEF_change_post_salbutamol@" />
+                        <strong> %</strong>
                         <br/>
                         <strong>
                             5) DDP % meillure effort vs DDP prédit/</strong>span>PEF % best effort vs PEF predicted
-                            <obs conceptId="$@PEF_percent_best_effort_vs_PEF_predicted@" />
+                        <obs conceptId="$@PEF_percent_best_effort_vs_PEF_predicted@" />
 
                         <strong> % </strong>
                     </td>
@@ -1261,7 +1269,7 @@
             <table border="1">
                 <tr>
                     <th class="tableHeader">
-                       <strong>Résultat échocardiographique préliminaire/</strong>Preliminary echocardiographic result
+                        <strong>Résultat échocardiographique préliminaire/</strong>Preliminary echocardiographic result
                         <obs conceptId="$@DDB_ECHOCARDIOGRAPH_RESULT@" answerConceptId="$@NO_DONE@" answerLabel=""
                              style="checkbox" /><strong>pas fiat/</strong>Not done
                     </th>
@@ -1455,7 +1463,7 @@
                     <td></td>
                     <td>
                         <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style=""/>
-                         <strong>Autre/</strong> Other
+                        <strong>Autre/</strong> Other
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
                     </td>
                 </tr>
@@ -1866,7 +1874,7 @@
                     <td colspan="2">
                         <obs conceptId="$@Asthma_medications@" answerConceptId="$@AMINOPHYLLINE@" answerLabel="" style="checkbox"/>
                         <strong>aminophyilline(10mg)/
-                        <obs conceptId="$@Aminophyilline_dose_in_milligrams@"/> mg (4mg/kg) 3x/jr
+                            <obs conceptId="$@Aminophyilline_dose_in_milligrams@"/> mg (4mg/kg) 3x/jr
                         </strong>
                     </td>
                 </tr>
@@ -1875,7 +1883,7 @@
                         <obs conceptId="$@Asthma_medications@" answerConceptId="$@Lifestyle_intervention_only@" answerLabel="" style="checkbox"/>
                         <strong>MRGO Légére-> changements du style de vie: (ne pas s'allonger pour 1 heure aprés manger,élever la tête du lit avec 2 briques sous les postes,
                             manger répas plus petits, éviter alcool,sodas,café,thé)/</strong> Mild GERD -> lifestyle changes:(do not lie down for 1 hour after eating,
-                            elevate the head of the bed with 2 bricks under posts, eat smaller meals.avoid alcohol, sodas, coffee,tea)
+                        elevate the head of the bed with 2 bricks under posts, eat smaller meals.avoid alcohol, sodas, coffee,tea)
                     </td>
                 </tr>
                 <tr>
@@ -1914,9 +1922,13 @@
             </table>
         </section>
         <br />
-        <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
-                        stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
-        -->
+        <div>
+            <section headerLabel="LISTE DES MEDICAMENTS / MEDICATION LIST">
+                <htmlformflowsheet formId="$@NCD_RBC_Asthma_medication_List@" sharedEncounter="true" />
+            </section>
+        </div>
+        <br />
+        <enrollInProgram programId="$@Chronic_respiratory_disease_program@"/>
         <submit />
         <br/>
     </div>

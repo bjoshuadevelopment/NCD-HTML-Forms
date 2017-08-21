@@ -1,5 +1,5 @@
 <htmlform> <!--
-           Oncology - Inpatient progress note -Breast DST
+           NCD - DIABETES Exit Forms
             Pilot_4July_v1.3NT
                 Author:
                 Builder: Byiringiro Joshua
@@ -273,6 +273,11 @@
         @OPERATIVE_REPROT_FACILITY@=1b727a0a-ec58-4360-bee3-bcf771a9404b
         @OPERATIVE_REPORT_CONSTRUCT@=cb7278c9-6631-4a32-b4d7-378e24b2df93
 
+
+        <!-- program Id -->
+        @Diabetes_Program@ = eff53c35-eaa8-4cae-9d68-78c2c21a5e6d
+
+
     </macros>
 
 
@@ -298,7 +303,7 @@
         font-size: 15px;
         }
 
-        #container {
+        #container {Diabetes
         position: relative;
         margin: auto;
         width: 1400px;
@@ -452,9 +457,8 @@
 
         </section>
         <br />
-        <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
-                        stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
-        -->
+        <completeProgram programId="$@OPERATIVE_REPORT_CONSTRUCT@"/>
+
         <submit />
         <br/>
     </div>

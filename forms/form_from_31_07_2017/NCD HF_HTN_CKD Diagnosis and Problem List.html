@@ -7,29 +7,11 @@
         -->
 
     <macros>
-        @GLYCEMIA@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
-        @HbA1c@ = 159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        @UREA@ = 3cd4aa12-26fe-102b-80cb-0017a47871b2
-        @CREATININE@ = 3cd4374e-26fe-102b-80cb-0017a47871b2
-        @TOTAL_CHOLESTEROL@ = 3cd68c7e-26fe-102b-80cb-0017a47871b2
-        @LDL@ = 3cd68fa8-26fe-102b-80cb-0017a47871b2
-        @HDL@ = 3cd68e18-26fe-102b-80cb-0017a47871b2
-        @TRIGLYCERIDES@ = 3cd69138-26fe-102b-80cb-0017a47871b2
-        @ASAT_RESULT@ = 68ba31fa-e2ae-45c1-8d6d-f116c27f190e
-        @ALAT_RESULT@ = fd826b26-0343-41d6-b51c-81f3b75e388c
-        @Gamma_GT@ = a01f58fa-0e27-474a-8975-f282f888a31d
-        @NA@ = 3cd76b58-26fe-102b-80cb-0017a47871b2
-        @K@ = 3cd76ce8-26fe-102b-80cb-0017a47871b2
-        @cal@ = 01765cd1-8fd6-4783-b053-190b1f6ed5bd
-        @TOTAL_PROTEIN@ = 3cd3bd5a-26fe-102b-80cb-0017a47871b2
-        @GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
-        @ketone@ = e8ebea1d-88c7-4e1d-aa9a-bccbe51dbb9b
-        @OTHER_LAB_TEST_NAME@ = 3ce1c90e-26fe-102b-80cb-0017a47871b2
-        @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
-        @Xrays@ = 3723fd15-2e30-477d-9488-5cfd78bd790c
-        @fundoscopy@ = da4e608a-452f-4dfa-9540-6fd53c6adf33
-        @ECG_DIAGNOSIS_(text)@ = cdcbfe8b-5b1b-4522-91fb-24267c668ba0
 
+        <!-- encouter Types-->
+        @Chronic_Kidney_Disease@ = 710c8487-9831-4063-a79d-bf07f27653b2
+        @HYPERTENSION_VISIT@ = 2f75f29f-454d-4e91-915c-ec3fd49532b1
+        @Heart_Failure@ = d889bcb3-c99d-4648-a3ea-b373335b9efd
 
     </macros>
 
@@ -159,7 +141,7 @@
                         <b>REPUBLIC OF RWANDA
                             <br />MINISTRY OF HEALTH</b>
                     </td>
-                    <td><strong> NCD Enrollment: DIAGNOSTIC ET LISTE DES PROBLEMES/</strong>Diagnosis and Problem List <br/>
+                    <td><strong> NCD HEARTFAILURE/ HYPERTESION/ CKD: DIAGNOSTIC ET LISTE DES PROBLEMES/</strong>Diagnosis and Problem List <br/>
                         <b> IMB ID: <lookup class="value"
                                             expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
                                                                                                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
@@ -173,46 +155,31 @@
                     <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
                     </td>
                     <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Encounter Type:<encounterType types="$@Chronic_Kidney_Disease@,$@HYPERTENSION_VISIT@,$@Heart_Failure@" />
+                        <br/>
                         Provider:<encounterProvider id="encounterProvider"
                                                     role="Provider" default="currentUser"/>
                     </td>
                 </tr>
             </table>
-
-            <table border="1">
+            <table>
                 <tr>
-                    <th class="tableHeader" colspan="4">
-                        <center>
-                            <strong> Other Investigations (xray,etc</strong>
-                        </center>
+                    <th>
+                        <strong>EMR</strong>
+                    </th>
+                    <th class="tableHeader">
+                        <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
                     </th>
                 </tr>
                 <tr>
+                    <td></td>
                     <td>
-                        Xrays
-                    </td>
-                    <td>
-                        <obs conceptId="$@Xrays@" cols="80"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Fundoscopy
-                    </td>
-                    <td>
-                        <obs conceptId="$@fundoscopy@" cols="80"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        ECG
-                    </td>
-                    <td>
-                        <obs conceptId="$@ECG_DIAGNOSIS_(text)@" cols="80"/>
-                    </td>
-                </tr>
+                        <obs conceptId="970d41ce-5098-47a4-8872-4dd843c0df3f" cols="100" rows="2" placeholder="Type here your Text"/>
 
+                    </td>
+                </tr>
             </table>
+
         </section>
         <br />
         <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"

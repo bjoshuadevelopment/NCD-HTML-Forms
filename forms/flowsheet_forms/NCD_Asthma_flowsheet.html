@@ -7,6 +7,8 @@
         @NCD_Asthma_Diagnosis_And_Problem_List@ = cf5f2053-e0f6-4fef-bd7e-91fb9ea6b990
         @NCD_RBC_ASTHMA_RENDEZ_VOUS@ = 832d1420-bb75-4a2d-acf4-e6abe765adcf
         @NCD_RBC_Asthma_Other_Investigations@ = 27dd3e4a-ff4f-48a3-913c-415616616ca1
+        @NCD_RBC_Asthma_medication_List@ = 6c32a9b2-0552-428f-a1e5-4211a319e2fb
+        @NCD_Asthma_Exit_from_Care_Information@ = 72717458-49bb-472c-b4a7-6a929ff8d944
     </macros>
     <style>
         th.tableHeader {
@@ -174,7 +176,13 @@
         <br />
         <div>
             <section headerLabel="LISTE DES MEDICAMENTS / MEDICATION LIST">
-                <strong> Missing medication list</strong>
+                <htmlformflowsheet formId="$@NCD_RBC_Asthma_medication_List@" sharedEncounter="true" />
+            </section>
+        </div>
+        <br />
+        <div>
+            <section headerLabel="EXIT FROM CARE INFORMATION">
+                <htmlformflowsheet formId="$@NCD_Asthma_Exit_from_Care_Information@" sharedEncounter="true" />
             </section>
         </div>
         <br />

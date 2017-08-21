@@ -1,5 +1,5 @@
 <htmlform> <!--
-           Oncology - Inpatient progress note -Breast DST
+           NCD - Asthma Exit Form
             Pilot_4July_v1.3NT
                 Author:
                 Builder: Byiringiro Joshua
@@ -18,6 +18,13 @@
         @Patient(generic__answer_to_aquestion)@ = 71213fa5-308b-4402-81d0-a65a14d771d1
         @OTHER_NO_CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
         @Other@ = c548a633-9931-496d-9ade-4b7c971e6600
+        @REASON_FOR_EXIT@=3cde5ef4-26fe-102b-80cb-0017a47871b2
+        @PATIENT_DIED@=3cdd446a-26fe-102b-80cb-0017a47871b2
+        @TRANSFERED@=3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
+        @LTFU@=3ceb0ed8-26fe-102b-80cb-0017a47871b2
+        @DECLINED_CARE@=1b83f37a-df3a-42a5-b83b-ebc5237f2dbf
+        @FACILITY@=3c9331e3-d02c-4b7d-840e-59e2d8ab7dff
+        @planned_admission_reason@ = 1d642160-089f-49d3-98ce-68885cb5f893
 
         <!-- The imported ones -->
         @scheduledAdmission@ = 3cd91070-26fe-102b-80cb-0017a47871b2
@@ -266,6 +273,11 @@
         @OPERATIVE_REPROT_FACILITY@=1b727a0a-ec58-4360-bee3-bcf771a9404b
         @OPERATIVE_REPORT_CONSTRUCT@=cb7278c9-6631-4a32-b4d7-378e24b2df93
 
+        <!-- Program ID -->
+        @Chronic_respiratory_disease_program@ = 6b825913-ab44-4e49-9ea0-c9e5919f94af
+
+
+
     </macros>
 
 
@@ -394,7 +406,7 @@
                         <b>REPUBLIC OF RWANDA
                             <br />MINISTRY OF HEALTH</b>
                     </td>
-                    <td><strong> NCD Enrollment: DIAGNOSTIC ET LISTE DES PROBLEMES/</strong>Diagnosis and Problem List <br/>
+                    <td><strong>INFORMATION SUR LA SORTIE DU PROGRAM/</strong>EXIT FROM CARE INFORMATION <br/>
                         <b> IMB ID: <lookup class="value"
                                             expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
                                                                                                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
@@ -409,33 +421,43 @@
                     </td>
                     <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         Provider:<encounterProvider id="encounterProvider"
-                                                    role="Provider" default="currentUser"/>
+                                                    role="Oncology Provider" default="currentUser"/>
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <th>
+            <table border="1">
+                <tr >
+                    <th class="tableHeader">
                         <strong>EMR</strong>
                     </th>
+                    <th class="tableHeader"></th>
                     <th class="tableHeader">
-                        <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
+                        <strong> Raisons</strong>Reasons
                     </th>
                 </tr>
                 <tr>
                     <td></td>
+                    <td><strong>Sortie/</strong> Exit</td>
                     <td>
-                        <obs conceptId="970d41ce-5098-47a4-8872-4dd843c0df3f" cols="100" rows="2" placeholder="Type here your Text"/>
+
+                        If the patient is exiting permanently, fill this drop down. <exitFromCare/><br/>
+                        <obs conceptId="$@REASON_FOR_EXIT@"
+                             answerConceptId="$@PATIENT_DIED@" answerLabel=""/> <strong>Decede/</strong>Death
+                        <obs conceptId="$@REASON_FOR_EXIT@"
+                             answerConceptId="$@LTFU@" answerLabel=""/><strong>Abandon/</strong>Lost To Follow Up
+                        <obs conceptId="$@REASON_FOR_EXIT@"
+                             answerConceptId="$@TRANSFERED@" answerLabel=""/><strong>Transfere: FOSA/</strong>Referred(Facility):
+                        <obs	conceptId="$@FACILITY@" />
+                        <obs conceptId="$@REASON_FOR_EXIT@"
+                             answerConceptId="$@DECLINED_CARE@" answerLabel=""/><strong>Refus/</strong> Declined
 
                     </td>
                 </tr>
-            </table>
 
+            </table>
         </section>
-        <br />
-       <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
-                       stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
-       -->
+        <completeProgram programId="$@Chronic_respiratory_disease_program@"/>
+
         <submit />
         <br/>
     </div>

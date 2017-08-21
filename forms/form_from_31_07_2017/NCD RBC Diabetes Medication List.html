@@ -1,0 +1,277 @@
+<htmlform>
+    <!-- Diabetes flowsheet:  Insulin list
+         Written by jberchmas
+           -->
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        @Diabetes_Medications@ = fa9b8b64-7081-41ec-9018-a8ea51464d70
+        @METFORMIN@ = 09c64c66-11d5-4fac-8848-9fd33206fefd
+        @INSULIN_Regular@ = 0ad8ceac-15f5-102d-96e4-000c29c2a5d7
+        @GLIBENCLAMIDE@ = 0084d7bd-a40f-44fb-bd18-2a1853d03ee8
+        @INSULIN_LENTE@ = 3ccf1c1e-26fe-102b-80cb-0017a47871b2
+        @Insulin_70_30@ = 9231cac4-8d3d-4bf5-97a3-81ec912b1899
+        @AMITRIPTYLINE@ = 3cd52f32-26fe-102b-80cb-0017a47871b2
+        @Drug_Details@ = a4ae1344-3548-4018-8418-4a48a897e6fe
+        @DOSE_IN_GRAMS@ = bb37cd1c-d48b-4294-a30e-72557199d251
+        @GENERAL_DRUG_FREQUENCY@ = 5e152a81-8635-41d6-aef2-2527a5f584f3
+        @MEDICATION_START_TIME@ = 1ef267bf-95a1-4636-869d-fb6d3813f15a
+        @MEDICATION_STOP_TIME@ = 10cb706c-290f-48f0-955a-6ba7a07a9a6f
+        @REASON_ORDER_STOPPED@=3cde6070-26fe-102b-80cb-0017a47871b2
+        @Glucometer_recommended_for_treatment@ = 8bda1400-3d58-4c18-a1cd-2e8470276da5
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @Other_Diabetes_Drug@ = 219d650a-3305-4f56-9613-147d213bc9c9
+        @epilepsy_medications@ = b26e8787-c972-4b0e-8480-e91c53940463
+        @PHENOBARBITAL@ = 3ccec5de-26fe-102b-80cb-0017a47871b2
+        @PHENYTOIN@ = 3ccf0d96-26fe-102b-80cb-0017a47871b2
+        @CARBAMAZEPINE@ = 3cd51dd0-26fe-102b-80cb-0017a47871b2
+        @VALPROIC_ACID@ = 53ed50e2-d3b6-4166-963d-7a6d7d8c17e8
+        @HALOPERIDOL@ = 69562047-dc02-4fd2-aebe-fae338929a81
+
+
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <table cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                     height="65" ></img>
+                <b>REPUBLIC OF RWANDA
+                    <br />MINISTRY OF HEALTH</b>
+            </td>
+            <td><strong> LISTE DES MEDICAMENTS/</strong>MEDICATION LIST <br/>
+                <b> IMB ID: <lookup class="value"
+                                    expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                       expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                <br/>
+                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+            </td>
+        </tr>
+        <tr>
+            <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+            </td>
+            <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                Provider:<encounterProvider id="encounterProvider"
+                                            role="Provider" default="currentUser"/>
+            </td>
+        </tr>
+    </table>
+
+    <section>
+        <table border="1">
+            <tr>
+                <th class="tableHeader" colspan="7">
+                    <center> LISTE DES MEDICAMENTS/ MEDICATION LIST</center>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    EMR
+                </th>
+                <th>
+                    <strong> Médicament/</strong> Medication
+                </th>
+                <th>
+                    Dose
+                </th>
+                <th>
+                    Fréquence <br/>
+                    frequency
+                </th>
+                <th>
+                    Date de début <br/>
+                    Start date
+                </th>
+                <th>
+                    Date d'arrêt <br/>
+                    Stop date
+                </th>
+                <th>
+                    Raison pour l'arrêt <br/>
+                    Reason for stopping
+                </th>
+            </tr>
+            <tr>
+                <td> <strong> SPECIFIC</strong></td>
+                <td>
+                    <obs conceptId="$@Diabetes_Medications@" answerConceptIds="$@METFORMIN@,$@INSULIN_Regular@,$@INSULIN_LENTE@,$@Insulin_70_30@,$@GLIBENCLAMIDE@,$@AMITRIPTYLINE@"/>
+                </td>
+                <obsgroup groupingConceptId="$@Drug_Details@">
+                    <td>
+                        <obs conceptId="$@DOSE_IN_GRAMS@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@GENERAL_DRUG_FREQUENCY@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@MEDICATION_START_TIME@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@MEDICATION_STOP_TIME@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@REASON_ORDER_STOPPED@"/>
+                    </td>
+                </obsgroup>
+            </tr>
+            <tr>
+                <td> GENERAL</td>
+                <td>
+                    <obs conceptId="$@epilepsy_medications@" answerConceptIds="$@PHENOBARBITAL@,$@PHENYTOIN@,$@CARBAMAZEPINE@,$@VALPROIC_ACID@,$@HALOPERIDOL@"/>
+                </td>
+                <obsgroup groupingConceptId="$@Drug_Details@">
+                    <td>
+                        <obs conceptId="$@DOSE_IN_GRAMS@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@GENERAL_DRUG_FREQUENCY@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@MEDICATION_START_TIME@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@MEDICATION_STOP_TIME@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@REASON_ORDER_STOPPED@"/>
+                    </td>
+                </obsgroup>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="6">
+                    <obs conceptId="$@Glucometer_recommended_for_treatment@" answerConceptId="$@YES@" answerLabel=" " style="checkbox"/> <strong>Glucométre/</strong> Glucometer
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <strong> Autre/</strong> Other
+                    <obs conceptId="$@Other_Diabetes_Drug@" cols="100"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <center>
+        <submit />
+    </center>
+
+</htmlform>

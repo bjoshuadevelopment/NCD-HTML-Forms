@@ -9,6 +9,8 @@
         @NCD_RBC_Diabetes_Other_Investigations@ = eb0ee4ea-0a3c-431d-a461-8b5cac492f9a
         @NCD_RBC_Diabetes_Insulin_List@ = bb15ac86-a604-4277-a476-2cca5a0c5dc8
         @NCD_RBC_Diabetes_MedicationExam@ = 49bfb16d-0b91-42d0-a403-403e3cb916cd
+        @NCD_RBC_Diabetes_Medication_List@ = ce1aa1c1-f284-45f9-b62c-b18c26bc2ef0
+        @NCD_DIABETES_Exit_from_Care_Information@ = 36aa298d-9677-44dc-b528-90936ca43f1e
     </macros>
     <style>
         th.tableHeader {
@@ -181,14 +183,20 @@
         </div>
         <br />
         <div>
-            <section headerLabel="LISTE DES MEDICAMENTS / MEDICATION LIST">
-                <strong> Missing medication list</strong>
+            <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
+                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Medication_List@" sharedEncounter="true" />
             </section>
         </div>
         <br />
         <div>
             <section headerLabel="EXAMEN / EXAM">
                 <htmlformflowsheet formId="$@NCD_RBC_Diabetes_MedicationExam@" sharedEncounter="true" />
+            </section>
+        </div>
+        <br />
+        <div>
+            <section headerLabel="EXIT FROM CARE INFORMATION">
+                <htmlformflowsheet formId="$@NCD_DIABETES_Exit_from_Care_Information@" sharedEncounter="true" />
             </section>
         </div>
         <br />

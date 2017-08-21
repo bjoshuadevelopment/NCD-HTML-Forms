@@ -1,18 +1,21 @@
 <htmlform>
-        <!-- Dsthma flowsheet top level form.
-                 Flow-DM-RW.V2.0.akb.15May09.doc
-             Created by Byiringiro Joshua 2017
-         -->
+    <!-- Diabetes flowsheet:  Insulin list
+         Written by jberchmas
+           -->
     <macros>
-        @NCD_HF/HTN/CKD_Diagnosis_and_Problem_List@ = 802fa3cd-1823-439a-b7e6-970297f8eb28
-        @NCD_HF/HTN/CKD_Clinic_Visits@ = d9d135f9-7540-4b47-bf48-73c8441f58d1
-        @NCD_HF/HTN/CKD_Other_Studies@ = d802f168-5051-4016-a5b3-8bd2e5329869
-        @NC_HF/HTN/CKD_Echochardiography@ = 009585ff-d5aa-46f1-a959-b91219684733
-        @NC_HF/HTN/CKD_MedicationExam@ = 06659b6b-1a30-4d69-a50d-50900f574dd9
-        @NCD_HF_HTN_CKD_Medication_List@ = f59ee986-a08f-4ddb-8f83-764481e29943
-        @NCD_HEART_FAILURE_Exit_From_Care_Information@ = 781458f9-1629-4eaa-a311-5890f59086ac
-        @NCD_HEPERTENSION_Exit_from_Care_Information@ = 4d0f73a2-ac1c-4c23-9579-03adafb0d652
-        @NCD_CKD_Exit_from_Care_Information@ = 3529cade-a3d1-4494-b614-fc5c8f6be0f1
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+            <!-- drugs -->
+        @MORNING_DOSE_IN_MILLIGRAMS@ = f032b306-4d4b-4b02-8335-3cce084f30a6
+        @NOON_DOSE_IN_MILLIGRAMS@ = 41abbe03-04da-4b5d-8223-0a249245dcf1
+        @NIGHT_DOSE_IN_MILLIGRAMS@ = 305c266e-2035-4ef2-ab44-b4e70756998d
+        @BED_TIME_DOSE_IN_MILLIGRAMS@ = ef7581c0-18f7-40a6-acb9-1e31e1c325f8
+        @REASON_ORDER_STOPPED@=3cde6070-26fe-102b-80cb-0017a47871b2
+        @Insuline_rapide@ = 7614d49a-57d8-4b55-9fac-9be4fdd06c84
+        @Insulin_lente@ = 80b647a7-73ae-4aa2-af5c-8a1f34ce0e44
+        @Insulin_70/30_mixte@ = d18fc471-51b7-4469-83b5-03f0716a1af6
+
     </macros>
     <style>
         th.tableHeader {
@@ -130,7 +133,6 @@
         }
     </style>
 
-    <!-- Form header -->
     <table cellspacing="0" cellpadding="6" width="100%">
         <tr>
             <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
@@ -138,7 +140,7 @@
                 <b>REPUBLIC OF RWANDA
                     <br />MINISTRY OF HEALTH</b>
             </td>
-            <td><strong>NCD HF/ HTN/ CKD</strong><br/>
+            <td><strong> LISTE D'INSULINE/</strong>INSULIN LIST <br/>
                 <b> IMB ID: <lookup class="value"
                                     expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
                                                                                                        expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
@@ -157,65 +159,59 @@
             </td>
         </tr>
     </table>
-    <table>
 
-        <br />
+    <section>
         <div>
-            <section headerLabel="DIAGNOSTIQUE ET LISTE DES PROBLÈME / DIAGNOSIS AND PROBLEM LIST">
-                <htmlformflowsheet formId="$@NCD_HF/HTN/CKD_Diagnosis_and_Problem_List@" sharedEncounter="true" />
-            </section>
+            <table border="1" >
+                <tr>
+                    <th class="tableHeader" colspan="9">
+                        <center><strong>LISTE D'INSULINE/</strong> INSULIN LIST</center>
+                    </th>
+                </tr>
+                <tr>
+                    <th> <strong> EMR </strong> </th>
+                    <th> <strong> Type d'Insuline </strong>
+                        <br/> Insulin Type
+                    </th>
+                    <th> <strong> Matin </strong>
+                        <br/> Morning Dose
+                    </th>
+                    <th> <strong> Midi </strong>
+                        <br/> Lunch Dose
+                    </th>
+                    <th> <strong> Soir </strong>
+                        <br/> Dinner Dose
+                    </th>
+                    <th> <strong> au <br/> couché </strong>
+                        <br/> Bed Dose
+                    </th>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                        <drugOrder drugNames="$@Insuline_rapide@,$@Insulin_lente@,$@Insulin_70/30_mixte@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@MORNING_DOSE_IN_MILLIGRAMS@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@NOON_DOSE_IN_MILLIGRAMS@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@NIGHT_DOSE_IN_MILLIGRAMS@"/>
+                    </td>
+                    <td>
+                        <obs conceptId="$@BED_TIME_DOSE_IN_MILLIGRAMS@"/>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <br />
-        <div>
-            <section headerLabel="RENDEZ-VOUS/ CLINIC VISITS">
-                <htmlformflowsheet formId="$@NCD_HF/HTN/CKD_Clinic_Visits@" sharedEncounter="true" />
-            </section>
-        </div>
-        <br />
-        <div>
-            <section headerLabel="AUTHRE INVESTIGATIONS/ OTHER STUDIES">
-                <htmlformflowsheet formId="$@NCD_HF/HTN/CKD_Other_Studies@" sharedEncounter="true" />
-            </section>
-        </div>
-        <br />
-        <div>
-            <section headerLabel="Echocardiographie/ Echocardiography">
-                <htmlformflowsheet formId="$@NC_HF/HTN/CKD_Echochardiography@" sharedEncounter="true" />
-            </section>
-        </div>
-        <br />
-        <div>
-            <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
-                <htmlformflowsheet formId="$@NCD_HF_HTN_CKD_Medication_List@" sharedEncounter="true" />
-            </section>
-        </div>
-        <br />
-        <div>
-            <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
-                <htmlformflowsheet formId="$@NC_HF/HTN/CKD_MedicationExam@" sharedEncounter="true" />
-            </section>
-        </div>
-        <br />
-        <div>
-            <section headerLabel="HEART FAILURE - EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_HEART_FAILURE_Exit_From_Care_Information@" sharedEncounter="true" />
-            </section>
-        </div>
-        <div>
-            <section headerLabel="HEPERTENSION - EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_HEPERTENSION_Exit_from_Care_Information@" sharedEncounter="true" />
-            </section>
-        </div>
-        <div>
-            <section headerLabel="CHRONIC KIDNEY DISEASE - EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_CKD_Exit_from_Care_Information@" sharedEncounter="true" />
-            </section>
-        </div>
-    </table>
+    </section>
+
     <center>
-        <submit submitLabel="Close Flowsheet" />
+        <br/>
+        <submit />
+        <br/>
     </center>
-    <br />
-    <br />
 
 </htmlform>
