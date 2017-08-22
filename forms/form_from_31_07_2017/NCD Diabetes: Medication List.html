@@ -6,26 +6,21 @@
         paperFormId = Flow-DM-RW.V2.0.akb.15May09
         headerColor =#009d8e
         fontOnHeaderColor = white
-
+        @METFORMIN@ = 6750e69d-e516-4a29-8641-ff6f92638fbc
+        @INSULIN_Regular@ = 7614d49a-57d8-4b55-9fac-9be4fdd06c84
+        @GLIBENCLAMIDE@ = e7eb1ba5-4031-4f83-b9b4-65955b76bb51
+        @INSULIN_LENTE@ = 80b647a7-73ae-4aa2-af5c-8a1f34ce0e44
+        @Insulin_70_30@ = d18fc471-51b7-4469-83b5-03f0716a1af6
+        @AMITRIPTYLINE@ = 39490513-14ec-4f45-b5b6-b59487d02843
         @PHENOBARBITAL@ = 7ce04b86-1379-4ab8-8bd8-f8dfc445e1ee
-        @REASON_ORDER_STOPPED@=3cde6070-26fe-102b-80cb-0017a47871b2
-        @Other_Asthma_drug@ = 16fae208-4dea-4e32-9233-238be6eac56c
-
-
-
-
-        <!-- drugs -->
-        @Salbutamol@ = b17e3545-6900-4aa6-866f-f8bbfec2fde1
-        @Aminophylline@ = 5e73df67-e8f5-4415-b38b-6fc1793f45da
-        @Beclometasone@ =
-        @Prednisolone@
-
-
-        <!-- general drugs -->
-        @phenytoin@ = 105a9382-8509-4a90-8546-29609aea71b1
-        @carbamazepine@ = e8ffe84f-25ef-49c4-882e-c47c454d44f0
+        @PHENYTOIN@ = 105a9382-8509-4a90-8546-29609aea71b1
+        @CARBAMAZEPINE@ = e8ffe84f-25ef-49c4-882e-c47c454d44f0
         @VALPROIC_ACID@ = 900d0911-5e8a-47c3-a683-4c9137cf1fa9
         @HALOPERIDOL@ = b1da9fe4-fb45-421b-ae6c-b7497417618b
+        @Glucometer_recommended_for_treatment@ = 8bda1400-3d58-4c18-a1cd-2e8470276da5
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @Other_Diabetes_Drug@ = 219d650a-3305-4f56-9613-147d213bc9c9
+
         @Triomune-30_(Stavudine_30_mg/Lamivudine_150_mg/Nevirapine_200_mg)@=42f00b94-26fe-102b-80cb-0017a47871b2
         @Triomune-40@=42f00efa-26fe-102b-80cb-0017a47871b2
         @d4T_30@=42f010f8-26fe-102b-80cb-0017a47871b2
@@ -315,7 +310,6 @@
         @Cyclophosphamide_(150mg/m2)@=f3648aec-0ac4-4f78-9b5f-a1d53daf8be5
         @Vincristine_(2mg/m2)@=ee7f23e3-3203-44fb-be8f-a4b05b92e877
 
-
     </macros>
     <style>
         th.tableHeader {
@@ -474,19 +468,17 @@
                 <th>
                     <strong> Médicament/</strong> Medication
                 </th>
-
             </tr>
             <tr>
-                <td> <strong> SPECIFIC</strong></td>
-                <td >
-                    <drugOrder drugNames="$@Salbutamol@,$@Aminophylline@,$@Beclometasone@,
-                    $@Prednisolone@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" hideDoseAndFrequency="true"/>
+                <td><strong>Specific</strong></td>
+                <td>
+                    <drugOrder drugNames="$@METFORMIN@,$@INSULIN_Regular@,$@INSULIN_LENTE@,$@Insulin_70_30@,$@GLIBENCLAMIDE@,$@AMITRIPTYLINE@"  discontinuedReasonConceptId="3cde6070-26fe-102b-80cb-0017a47871b2" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour arret" />
                 </td>
             </tr>
             <tr>
-                <td> GENERAL</td>
+                <td><strong>General</strong></td>
                 <td>
-                    <drugOrder drugNames="$@PHENOBARBITAL@,$@phenytoin@,$@carbamazepine@,$@VALPROIC_ACID@,$@HALOPERIDOL@,
+                    <drugOrder drugNames="$@PHENOBARBITAL@,$@PHENYTOIN@,$@CARBAMAZEPINE@,$@VALPROIC_ACID@,$@HALOPERIDOL@,
 $@Triomune-30_(Stavudine_30_mg/Lamivudine_150_mg/Nevirapine_200_mg)@,
 $@Triomune-40@,
 $@d4T_30@,
@@ -775,17 +767,24 @@ $@Hydrocortisone@,
 $@Prednisone_(100_mg/m2)@,
 $@Cyclophosphamide_(150mg/m2)@,
 $@Vincristine_(2mg/m2)@
-"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
+"  discontinuedReasonConceptId="3cde6070-26fe-102b-80cb-0017a47871b2" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour arret" />
                 </td>
             </tr>
             <tr>
-                <td colspan="7">
+                <td></td>
+                <td >
+                    <obs conceptId="$@Glucometer_recommended_for_treatment@" answerConceptId="$@YES@" answerLabel=" " style="checkbox"/> <strong>Glucométre/</strong> Glucometer
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <strong> Autre/</strong> Other
-                    <obs conceptId="$@Other_Asthma_drug@" cols="100"/>
+                    <obs conceptId="$@Other_Diabetes_Drug@" cols="100"/>
                 </td>
             </tr>
         </table>
     </section>
+
 
     <center>
         <submit />
