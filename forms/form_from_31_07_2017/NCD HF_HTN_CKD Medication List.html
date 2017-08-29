@@ -29,7 +29,6 @@
         @Carvedilol@ = d5c4eb2c-8208-4556-a735-eb0ac4b243e5
         @propanolol@ = fc976687-3cf8-40ba-980d-ce8c713361be
         @Nifedipine_retard@ = 9b5093dd-f09f-45b1-9e83-ae2e7051f618
-        @Amlodipine@ = a11efe31-0565-46f1-acf7-b64bb27650f1
         @Hydralazine@ = 4422d261-a13c-4ffd-bb15-04fa66efb120
         @Isosorbide_Dinitrate@ = 8743e21b-ac05-494e-8819-fac8a882fd4e
         @Amlodipine@ = a11efe31-0565-46f1-acf7-b64bb27650f1
@@ -469,13 +468,12 @@
             </td>
         </tr>
         <tr>
-            <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+            <td>Clinique / Clinic: <encounterLocation />
             </td>
             <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Encounter Type:<encounterType types="$@Chronic_Kidney_Disease@,$@HYPERTENSION_VISIT@,$@Heart_Failure@" />
+                Encounter Type:<encounterType types="CHRONIC KIDNEY DISEASE VISIT,HYPERTENSION VISIT,HEART FAILURE VISIT" />
                 <br/>
-                Provider:<encounterProvider id="encounterProvider"
-                                            role="Provider" default="currentUser"/>
+                Provider:<encounterProvider />
             </td>
         </tr>
     </table>
@@ -504,7 +502,7 @@
                     $@Carvedilol@,$@propanolol@,$@Nifedipine_retard@,
                     $@Amlodipine@,$@Hydralazine@,$@Isosorbide_Dinitrate@,
                     $@Warfarin@,$@aspirin@,$@Heparin_(Unfractionated)@,
-                    $@Heparin_(Low_molec_W)@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping"/>
+                    $@Heparin_(Low_molec_W)@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping"/>
                 </td>
             </tr>
             <tr>
@@ -799,7 +797,7 @@ $@Hydrocortisone@,
 $@Prednisone_(100_mg/m2)@,
 $@Cyclophosphamide_(150mg/m2)@,
 $@Vincristine_(2mg/m2)@
-"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
+"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
                     </td>
             </tr>
             <tr>

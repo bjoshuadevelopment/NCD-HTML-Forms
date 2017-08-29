@@ -70,18 +70,16 @@
                 </td>
             </tr>
             <tr>
-                <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+                <td>Clinique / Clinic: <encounterLocation/>
                 </td>
                 <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                    Encounter Type:<encounterType types="$@Chronic_Kidney_Disease@,$@HYPERTENSION_VISIT@,$@Heart_Failure@" />
+                    Encounter Type:<encounterType types="CHRONIC KIDNEY DISEASE VISIT,HYPERTENSION VISIT,HEART FAILURE VISIT" />
                     <br/>
-                    Provider:<encounterProvider id="encounterProvider"
-                                                role="Provider" default="currentUser"/>
+                    Provider:<encounterProvider />
                 </td>
             </tr>
         </table>
     </section>
-
     <section headerLabel="2. Rendez-Vous/CLINIC VISITS">
         <div style="overflow-x:auto;width:100%">
             <table border="2" cellspacing="0" cellpadding="2" width="100%" >

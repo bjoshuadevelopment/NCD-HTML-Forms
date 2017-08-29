@@ -451,11 +451,10 @@
             </td>
         </tr>
         <tr>
-            <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+            <td>Clinique / Clinic: <encounterLocation />
             </td>
             <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider id="encounterProvider"
-                                            role="Provider" default="currentUser"/>
+                Provider:<encounterProvider />
             </td>
         </tr>
     </table>
@@ -463,7 +462,7 @@
     <section>
         <table border="1">
             <tr>
-                <th class="tableHeader" colspan="7">
+                <th class="tableHeader" colspan="2">
                     <center> LISTE DES MEDICAMENTS/ MEDICATION LIST</center>
                 </th>
             </tr>
@@ -477,10 +476,17 @@
 
             </tr>
             <tr>
-                <td> <strong> SPECIFIC</strong></td>
+                <td> <strong> Drug SPECIFIC</strong></td>
                 <td >
                     <drugOrder drugNames="$@Salbutamol@,$@Aminophylline@,$@Beclometasone@,
-                    $@Prednisolone@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" hideDoseAndFrequency="true"/>
+                    $@Prednisolone@,$@Salbutamol_50@,$@Salbutamol_250@,$@Salbutamol(100mg)@,$@Salbutamol_(250_mcg)@,$@Salbutamol_(50_mcg)@" discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
+                </td>
+            </tr>
+            <tr>
+                <td> <strong> NCD SPECIFIC</strong></td>
+                <td >
+                    <drugOrder drugNames="$@Salbutamol@,$@Aminophylline@,$@Beclometasone@,
+                    $@Prednisolone@,$@Insuline_rapide@,$@Insulin_lente@,$@Insulin_70/30_mixte@," discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
                 </td>
             </tr>
             <tr>
@@ -775,7 +781,7 @@ $@Hydrocortisone@,
 $@Prednisone_(100_mg/m2)@,
 $@Cyclophosphamide_(150mg/m2)@,
 $@Vincristine_(2mg/m2)@
-"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" hideDoseAndFrequency="true" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
+"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
                 </td>
             </tr>
             <tr>
