@@ -353,10 +353,8 @@
 
         <!-- PROGRAM ID -->
         @Hypertesion@ = a39cb21d-5f5e-4013-9b6b-139453ab93ec
-
-        <!-- form -->
+        <!-- forms -->
         @NCD_HF_HTN_CKD_Medication_List@ = f59ee986-a08f-4ddb-8f83-764481e29943
-
 
     </macros>
 
@@ -368,8 +366,7 @@
         font-size: 16px;
         text-align: left;
         }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
+
         ul {
         list-style-type: square;
         font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -501,7 +498,8 @@
                     <td>Clinique / Clinic: <encounterLocation />
                     </td>
                     <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                        Provider:<encounterProvider />
+                        Provider:<encounterProvider id="encounterProvider"
+                                                    role="Provider" default="currentUser"/>
                     </td>
                 </tr>
             </table>
@@ -741,7 +739,7 @@
                         <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@stroke@" answerLabel="stroke" style="checkbox"/>
                         <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@Obesity@" answerLabel="obesity" style="checkbox"/>
                         <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@ASTHMA@" answerLabel="asthma" style="checkbox"/>
-                        <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@DIABETES_MELLITUS@" answerLabel="DM" style="checkbox"/>                    <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@OTHER_RELATIVE@" answerLabel="Autres(specifier)" style="checkbox"/>
+                        <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@DIABETES_MELLITUS@" answerLabel="DM" style="checkbox"/>
                         <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@chronical_kidney_disease@" answerLabel="CKD" style="checkbox"/>
                         <obs conceptId="$@Family_Member_Chronic_Diseases@" answerConceptId="$@Cancer@" answerLabel="cancer" style="checkbox"/>
 
@@ -885,7 +883,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>Sein/</strong> chest</td>
+                    <td><strong>Sein/</strong> breast</td>
                     <td>
                         <obs conceptId="$@Chest_Thorax_Exam_Findings@" answerConceptId="$@NORMAL@" answerLabel=""/><strong> Normale/</strong> normal
 

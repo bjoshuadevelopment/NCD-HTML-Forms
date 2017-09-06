@@ -6,7 +6,7 @@
         paperFormId = Flow-DM-RW.V2.0.akb.15May09
         headerColor =#009d8e
         fontOnHeaderColor = white
-            <!-- drugs -->
+        <!-- drugs -->
         @MORNING_DOSE_IN_MILLIGRAMS@ = f032b306-4d4b-4b02-8335-3cce084f30a6
         @NOON_DOSE_IN_MILLIGRAMS@ = 41abbe03-04da-4b5d-8223-0a249245dcf1
         @NIGHT_DOSE_IN_MILLIGRAMS@ = 305c266e-2035-4ef2-ab44-b4e70756998d
@@ -154,7 +154,8 @@
             <td>Clinique / Clinic: <encounterLocation />
             </td>
             <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider />
+                Provider:<encounterProvider id="encounterProvider"
+                                            role="Provider" default="currentUser"/>
             </td>
         </tr>
     </table>

@@ -147,10 +147,11 @@
             </td>
         </tr>
         <tr>
-            <td>Clinique / Clinic: <encounterLocation />
+            <td>Clinique / Clinic: <encounterLocation  />
             </td>
             <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider />
+                Provider:<encounterProvider id="encounterProvider"
+                                            role="Provider" default="currentUser"/>
             </td>
         </tr>
     </table>

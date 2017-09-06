@@ -19,6 +19,7 @@
         @OTHER_NO_CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
         @Other@ = c548a633-9931-496d-9ade-4b7c971e6600
         @REASON_FOR_EXIT@=3cde5ef4-26fe-102b-80cb-0017a47871b2
+        @TOP_NCD_REASON_FOR_EXIT@=bedc579c-cfdc-4a94-9b13-112ce21145f0
         @PATIENT_DIED@=3cdd446a-26fe-102b-80cb-0017a47871b2
         @TRANSFERED@=3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
         @LTFU@=3ceb0ed8-26fe-102b-80cb-0017a47871b2
@@ -437,14 +438,14 @@
                     <td><strong>Sortie/</strong> Exit</td>
                     <td>
                         If the patient is exiting permanently, fill this drop down. <exitFromCare/><br/>
-                        <obs conceptId="$@REASON_FOR_EXIT@"
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
                              answerConceptId="$@PATIENT_DIED@" answerLabel=""/> <strong>Decede/</strong>Death
-                        <obs conceptId="$@REASON_FOR_EXIT@"
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
                              answerConceptId="$@LTFU@" answerLabel=""/><strong>Abandon/</strong>Lost To Follow Up
-                        <obs conceptId="$@REASON_FOR_EXIT@"
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
                              answerConceptId="$@TRANSFERED@" answerLabel=""/><strong>Transfere: FOSA/</strong>Referred(Facility):
                         <obs	conceptId="$@FACILITY@" />
-                        <obs conceptId="$@REASON_FOR_EXIT@"
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
                              answerConceptId="$@DECLINED_CARE@" answerLabel=""/><strong>Refus/</strong> Declined
 
                     </td>

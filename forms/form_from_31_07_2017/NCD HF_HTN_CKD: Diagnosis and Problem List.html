@@ -157,7 +157,8 @@
                     <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                         Visit Type:<encounterType types="CHRONIC KIDNEY DISEASE VISIT,HYPERTENSION VISIT,HEART FAILURE VISIT" />
                         <br/>
-                        Provider:<encounterProvider />
+                        Provider:<encounterProvider id="encounterProvider"
+                                                    role="Provider" default="currentUser"/>
                     </td>
                 </tr>
             </table>
@@ -184,7 +185,9 @@
         <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
                         stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
         -->
-        <submit />
+        <center>
+            <submit />
+        </center>
         <br/>
     </div>
 </htmlform>

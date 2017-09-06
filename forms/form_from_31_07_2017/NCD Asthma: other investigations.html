@@ -5,7 +5,12 @@
     <macros>
         @STUDY@=3ce1c90e-26fe-102b-80cb-0017a47871b2
         @RESULTS@=3ce1ca8a-26fe-102b-80cb-0017a47871b2
-
+        @DATE_OF_RETURNED_RESULT@ = c19867c0-fec9-404c-bf25-6cf7a8c54eb7
+        @AFB_results@ = 00f6aecd-813c-4676-a354-d50cd73f21e1
+        @CXR_Results@ = 8f33541b-fb0e-4a0d-9b4c-9deecfcb2237
+        @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
+        @DATE_OF_LABORATORY_TEST@ = bbeb58d7-63ba-4d7b-ac5b-4f72d3985888
+        @dates_group@ = b982a38b-9a3a-4445-b59d-f8d58fa58f47
     </macros>
     <style>
         th.tableHeader {
@@ -155,19 +160,20 @@
                 <td>Etude / Study</td>
                 <td>Date requested</td>
                 <td>Résultats / Results</td>
-                <td>Date of Result</td>
             </tr>
             <tr>
                 <td><strong>Crachats</strong><br/>/Sputum smear for AFB</td>
-                <td><encounterDate/></td>
-                <td><obs conceptId="$@RESULTS@" rows="2" cols="60" /></td>
-                <td><encounterDate/></td>
+                <obsgroup groupingConceptId="$@dates_group@">
+                <td><obs conceptId="$@DATE_OF_LABORATORY_TEST@" allowFutureDates="true"/></td>
+                    </obsgroup>
+                <td><obs conceptId="$@AFB_results@" rows="2" cols="60" dateLabel="Date" showDate="true" allowFutureDates="true"/></td>
             </tr>
             <tr>
                 <td><strong>Cliche du thorax</strong>/CXR</td>
-                <td><encounterDate /></td>
-                <td><obs conceptId="$@RESULTS@" rows="2" cols="60" /></td>
-                <td><encounterDate/></td>
+                <obsgroup groupingConceptId="$@dates_group@">
+                    <td><obs conceptId="$@DATE_OF_LABORATORY_TEST@" allowFutureDates="true"/></td>
+                </obsgroup>
+                <td><obs conceptId="$@CXR_Results@" rows="2" cols="60"  dateLabel="Date" showDate="true" allowFutureDates="true"/></td>
             </tr>
             <tr>
                 <td>
@@ -175,9 +181,10 @@
                     <br/>
                     <obs conceptId="$@STUDY@" />
                 </td>
-                <td><encounterDate/></td>
-                <td><obs conceptId="$@RESULTS@" rows="2" cols="60" /></td>
-                <td><encounterDate/></td>
+                <obsgroup groupingConceptId="$@dates_group@">
+                    <td><obs conceptId="$@DATE_OF_LABORATORY_TEST@" allowFutureDates="true"/></td>
+                </obsgroup>
+                <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@" rows="2" cols="60" dateLabel="Date" showDate="true" allowFutureDates="true"/></td>Zz
             </tr>
 
         </table>
