@@ -350,6 +350,16 @@
         @Doxycycline_Dose_in_milligrams@ = baceda88-64de-44e8-a42c-274793763ca1
         @Number_or_days@ = 00f3e3f4-bd03-4cf1-a487-705b0acf0f4c
         @Other_Asthma_drug@ = 16fae208-4dea-4e32-9233-238be6eac56c
+        @RED_BLOOD_CELLS@ = 3cd2ab40-26fe-102b-80cb-0017a47871b2
+        @HEMOGLOBIN@ = 3ccc7158-26fe-102b-80cb-0017a47871b2
+        @HEMATOCRIT@ = 3cd69a98-26fe-102b-80cb-0017a47871b2
+        @WHITE_BLOOD_CELLS@ = 3cd2a906-26fe-102b-80cb-0017a47871b2
+        @NEUTROPHILS@ = 3cd6a592-26fe-102b-80cb-0017a47871b2
+        @EOSINOPHILS@ = 3cd6a8b2-26fe-102b-80cb-0017a47871b2
+        @BASOPHILS@ = 3cd6aa38-26fe-102b-80cb-0017a47871b2
+        @LYMPHOCYTES@ = 3cd6a402-26fe-102b-80cb-0017a47871b2
+        @MONOCYTES@ = 3cd6a722-26fe-102b-80cb-0017a47871b2
+        @PLATELETS@ = 3cd3d038-26fe-102b-80cb-0017a47871b2
 
         <!-- Program ID -->
         @Chronic_respiratory_disease_program@ = 6b825913-ab44-4e49-9ea0-c9e5919f94af
@@ -733,7 +743,7 @@
                 </tr>
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
-                    <td><strong><u>Family history:</u></strong> <br/> (alcohol,phusical inactivity,hx of chronic disease etc)<br/>
+                    <td><strong><u>Family history:</u></strong> <br/>
                         Ubudehe class:<obs conceptId="$@Ubudehe@"/>
                     </td>
                     <td colspan="4">
@@ -1179,7 +1189,19 @@
                 </tr>
                 <tr>
                     <td>1.FBC</td>
-                    <td><strong>Waiting for the order!</strong></td>
+                    <td>
+                        Red blood cells: <obs conceptId="$@RED_BLOOD_CELLS@"/><br/>
+                        Hemoglobin: <obs conceptId="$@HEMOGLOBIN@"/><br/>
+                        Hematocrit: <obs conceptId="$@HEMATOCRIT@"/><br/>
+                        White blood cells: <obs conceptId="$@WHITE_BLOOD_CELLS@"/><br/>
+                        Neutrophils: <obs conceptId="$@NEUTROPHILS@"/><br/>
+                        Eosinophil: <obs conceptId="$@EOSINOPHILS@"/><br/>
+                        Basophils: <obs conceptId="$@BASOPHILS@"/><br/>
+                        Lymphocytes: <obs conceptId="$@LYMPHOCYTES@"/><br/>
+                        Monocytes: <obs conceptId="$@MONOCYTES@"/><br/>
+                        Platelets: <obs conceptId="$@PLATELETS@"/>
+
+                    </td>
                     <td>6.ASAT/ALAT/GamaGT</td>
                     <td>
                         <obs conceptId="$@ASAT_RESULT@"/>
